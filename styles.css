@@ -1,51 +1,51 @@
-身体{
-    字体系列：Arial、sans-serif；
-    保证金：0；
-    填充：0；
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-标头{
-    背景颜色：#333；
-    白颜色;​
-    内边距：10像素；
-    文本对齐：居中；
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
-部分{
-    边距：20像素；
-    内边距：10像素；
-    边框：1 px 实线#ccc；
+section {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
-输入{
-    边距：5像素；
-    内边距：5像素；
+input {
+    margin: 5px;
+    padding: 5px;
 }
 
-按钮{
-    边距：5像素；
-    内边距：5像素 10像素；
-    背景颜色：#333；
-    白颜色;​
-    边框：无；
-    光标：指针；
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-按钮：悬停 {
-    背景颜色：#555；
+button:hover {
+    background-color: #555;
 }
 
-桌子{
-    宽度：100 %；
-    边框折叠：折叠；
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th, td {
-    边框：1 px 实线#ccc；
-    内边距：5像素；
-    文本对齐：左对齐；
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
 }
 
 th {
-    背景颜色：#f2f2f2；
+    background-color: #f2f2f2;
 }
