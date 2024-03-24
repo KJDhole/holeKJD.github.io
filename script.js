@@ -1,23 +1,23 @@
-// 模拟用户数据
-常量 用户= [
-    { 用户名: 'user1' ,密码: 'password1'  } ,
-    { 用户名：'用户2'，密码：'密码2'  }
-] ;
+// Simulate user data
+const users = [
+    { username: 'user1', password: 'password1' },
+    { username: 'user2', password: 'password2' }
+];
 
-// 模拟快递数据
-让 expressData = [ ] ;
+// Simulate express delivery data
+let expressData = [];
 
-// 登录功能
-函数 登录( )  {
-    const 用户名= 文档。getElementById ( '用户名' )。价值;
-    常量 密码=文档。getElementById ( '密码' )。价值;
+//Login function
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-    常量 用户=用户。find ( u => u.用户名=== 用户名 && u.密码=== 密码) ;
+    const user = users.find(u => u.username === username && u.password === password);
 
-    如果 （用户） {
-        Alert ( '登录成功' ) ;
-    } 别的 {
-        警报        alert('用户名或密码错误');
+    if (user) {
+        alert ( 'Login successful' ) ;
+    } else {
+                alert('用户名或密码错误');
     }
 }
 
@@ -66,56 +66,56 @@ function loadData() {
     expressData = jsonData ? JSON.parse(jsonData) : [];
 }
 
-// 渲染快递信息列表
-函数renderExpressList  (  )   {
-    const   tableBody =文档。getElementById  (  'expressTableBody'  ) ;
-    表体。 内部 HTML = '' ;
+//Render the courier information list
+function renderExpressList() {
+    const tableBody = document.getElementById('expressTableBody');
+    tableBody. innerHTML = '' ;
 
-    表达数据。forEach  (  (项目,索引) => {
-        常量行=文档。创建元素(  'tr'  ) ;
-        排。内部HTML = `
-            <td> ${项目。公司} </td>
-            <td> ${项目。追踪号码} </td>
-            <td> ${项目。取货地址} </td>
-            <td> ${项目。交货地址} </td>
+    expressData.forEach((item, index) => {
+        const row = document.createElement('tr');
+        row. innerHTML = `
+            <td>${item.company}</td>
+            <td>${item.trackingNumber}</td>
+            <td>${item.pickupAddress}</td>
+            <td>${item.deliveryAddress}</td>
             <td>
-                <button onclick="editExpress( ${ index } )">编辑</button>
-                <button onclick="deleteExpress( ${ index } )">删除</button>
+                <button onclick="editExpress(${index})">编辑</button>
+                <button onclick="deleteExpress(${index})">删除</button>
             </td>
-        ` ;
-        表体。追加子级（行）；
-    }  ）；
+        `;
+        tableBody.appendChild(row);
+    });
 }
 
 // 编辑快递信息
-函数 editExpress （索引）{
-    const     item = expressData [索引] ;
-    const     company = prompt    (    '请输入快递公司' ,  item.company ) ;
-    consttrackingNumber = prompt (  '  请输入快递单号' , item.trackingNumber )    ;
-    constpickupAddress= prompt  (  '请输入取货地址' ,item.pickupAddress ) ; 
-    const   DeliveryAddress = prompt  (  '请输入发货地址' , item.deliveryAddress )  ;
+function editExpress(index) {
+    const item = expressData[index];
+    const  company = prompt ( 'Please enter the courier company' , item. company ) ;
+    const  trackingNumber = prompt ( 'Please enter the express delivery number' , item. trackingNumber ) ;
+    const  pickupAddress = prompt ( 'Please enter the pickup address' , item. pickupAddress ) ;
+    const deliveryAddress = prompt('请输入送货地址', item.deliveryAddress);
 
-    if   (公司 && 跟踪号码 && 取货地址 && 送货地址)   {
-        表达式数据[索引] = {
-            公司，
-            追踪号码，
-            取货地址,
-            邮寄地址
-        } ;
-        保存数据（） ;
-        渲染ExpressList  (  ) ;
+    if (company && trackingNumber && pickupAddress && deliveryAddress) {
+        expressData[index] = {
+            company,
+            trackingNumber,
+            pickupAddress,
+            deliveryAddress
+        };
+        saveData();
+        renderExpressList();
     }
 }
 
 // 删除快递信息
-函数deleteExpress   (索引)     {
-    if      (     confirm     (     '确定要删除这条快递信息吗？'     )     )      {
-        表达数据。拼接（索引，1 ）；
-        保存数据（） ;
-        渲染ExpressList     (    ) ;
+function deleteExpress(index) {
+    if (confirm('确定要删除这条快递信息吗？')) {
+        expressData.splice(index, 1);
+        saveData();
+        renderExpressList();
     }
 }
 
 // 加载页面时加载数据
-加载数据（）；
-渲染ExpressList   (  ) ;
+loadData();
+renderExpressList();
