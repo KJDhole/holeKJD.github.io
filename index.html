@@ -1,56 +1,56 @@
 <!DOCTYPE html>
-< html lang = “en” >
-<头>
-    <元字符集= “UTF-8” >
-    <元名称= “视口” 内容= “宽度=设备宽度，初始比例=1.0” >
-    < title >校园代取快递小程序</ title >
-    <链接rel = “样式表”  href = “styles.css” >
-</头>
-<正文>
-    <标题>
-        < h1 >校园代取快递</ h1 >
-    </标题>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园代取快递小程序</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>校园代取快递</h1>
+    </header>
 
-    <部分id = “登录” >
-        < h2 >登录</ h2 >
-        < input type = "text"  id = "用户名"  placeholder = "用户名" >
-        <输入类型= “密码”  id = “密码” 占位符= “密码” >
-        <按钮onclick = “登录( ) ” >登录</按钮>
-    </节>
+    <section id="login">
+        <h2>登录</h2>
+        <input type="text" id="username" placeholder="用户名">
+        <input type="password" id="password" placeholder="密码">
+        <button onclick="login()">登录</button>
+    </section>
 
-    <节id = “注册” >
-        < h2 >注册</ h2 >
-        < input type = "text"  id = "newUsername"  placeholder = "用户名" >
-        <输入类型=“密码”id=“newPassword”占位符=“密码”>
-        <按钮onclick = “注册( ) ” >注册</按钮>
-    </节>
+    <section id="register">
+        <h2>注册</h2>
+        <input type="text" id="newUsername" placeholder="用户名">
+        <input type="password" id="newPassword" placeholder="密码">
+        <button onclick="register()">注册</button>
+    </section>
 
-    < id节=“submitExpress”>
-        < h2 >提交快递信息</ h2>
-        <输入类型= “文本”  id = “公司” 占位符= “快递公司” >
-        < input type = "text"  id = "trackingNumber"  placeholder = "快递单号" >
-        < input type = "text"  id = "pickupAddress"  placeholder = "取货地址" >
-        < input type = "text"  id = "deliveryAddress"  placeholder = "货运地址" >
-        < button onclick = " submitExpress ( ) " >提交</button>​​
-    </节>
+    <section id="submitExpress">
+        <h2>提交快递信息</h2>
+        <input type="text" id="company" placeholder="快递公司">
+        <input type="text" id="trackingNumber" placeholder="快递单号">
+        <input type="text" id="pickupAddress" placeholder="取货地址">
+        <input type="text" id="deliveryAddress" placeholder="送货地址">
+        <button onclick="submitExpress()">提交</button>
+    </section>
 
-    <节id = “expressList” >
-        < h2 >快递信息列表</ h2 >
-        <表>
-            <头部>
-                <tr>​​
-                    <th>快递公司</th>​​​
-                    < th >快递单号</ th >
-                    <th>取货地址</th>​​​
-                    <th>发货地址</th>​​​
-                    <th>操作</th>​​​​
-                </tr>​​
-            </头>
-            < tbody id = “expressTableBody” >
-            </正文>
-        </表>
-    </节>
+    <section id="expressList">
+        <h2>快递信息列表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>快递公司</th>
+                    <th>快递单号</th>
+                    <th>取货地址</th>
+                    <th>送货地址</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="expressTableBody">
+            </tbody>
+        </table>
+    </section>
 
-    <脚本 src = “script.js” > </脚本>
-</>
-
+    <script src="script.js"></script>
+</body>
+</html>
